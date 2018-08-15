@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Submit job application</title>
+</head>
+<body>
+    <form th:action="@{/jobapplication}" th:object="${jobApplicationForm}" method="post">
+       <table>
+             <tr>
+                 <td>Namn: <input type="text" th:field="*{Name}"></td>
+                 <td th:if="${#fields.hasErrors('Name')}" th:errors="*{Name}">Name Error</td>
+             </tr>
+             <tr>
+                 <td>Adress1: <input type="text" th:field="*{Adress1}"></td>
+                 <td th:if="${#fields.hasErrors('Adress1')}" th:errors="*{Adress1}">Name Error</td>
+             </tr>
+           <tr>
+        <td>Adress2: <input type="text" th:field="*{Adress2}"></td>
+        <td th:if="${#fields.hasErrors('Adress2')}" th:errors="*{Adress2}">Name Error</td>
+           </tr>
+
+        <td>Zipcode: <input type="text" th:field="*{Zipcode}"></td>
+        <td th:if="${#fields.hasErrors('name')}" th:errors="*{Zipcode}">Name Error</td>
+           </tr>
+           <tr>
+        <td>City: <input type="text" th:field="*{City}"></td>
+        <td th:if="${#fields.hasErrors('Zipcode')}" th:errors="*{City}">Name Error</td>
+           </tr>
+           <tr>
+        <td>Country: <input type="text" th:field="*{Country}"></td>
+        <td th:if="${#fields.hasErrors('Country')}" th:errors="*{Country}">Name Error</td>
+           </tr>
+           <tr>
+        <div>
+            <td>  <input type="radio" th:field="*{Gender}" value="Male" /> Male</td>
+            <td>  <input type="radio" th:field="*{Gender}" value="Female" /> Female</td>
+            <td>  <input type="radio" th:field="*{Gender}" value="Other" /> Other</td>
+            <td th:if="${#fields.hasErrors('Gender')}" th:errors="*{Gender}">Name Error</td>
+        </div>
+           </tr>
+           <tr>
+        <td>Age: <input type="text" th:field="*{age}"></td>
+        <td th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Name Error</td>
+           </tr>
+           <tr>
+        <div>
+            <td>  <input type="checkbox" th:field="*{driverlicense}" value="driverlicense" /> Have driver license</td>
+            <td>  <input type="checkbox" th:field="*{nightshift}" value="nightshift" /> Can work night-shift</td>
+            <td>  <input type="checkbox" th:field="*{weekends}" value="weekends" /> Can work weekends</td>
+            <td>  <input type="checkbox" th:field="*{fulltime}" value="fulltime" /> Prefers to work full time only</td>
+        </div>
+           </tr>
+           <tr>
+        <td>Personal description: <input type="text" th:field="*{description}"></td>
+        <td th:if="${#fields.hasErrors('description')}" th:errors="*{description}">Name Error</td>
+           </tr>
+           <tr>
+        <td>CV: <input type="text" th:field="*{CV}"></td>
+        <td th:if="${#fields.hasErrors('CV')}" th:errors="*{CV}">Name Error</td>
+           </tr>
+
+           <tr>
+               <td> <input type="submit" value="submit"></td>
+           </tr>
+       </table>
+    </form>
+
+
+</body>
+</html>
